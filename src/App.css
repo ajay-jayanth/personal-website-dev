@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+@layer components {
+  /* HOME PAGE */
+  .panel-1 {
+    @apply h-screen w-full
+  }
+  .bg-1 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.85)), url("../img/pfp2.jpg");
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+    @apply h-screen w-full
+  }
+  .App-header {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+
+    color: #fff;
+    font-family: proxima-nova,Sans-serif;
+    font-size: 65px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2.7px;
+    text-shadow: 0 0 5px rgb(0 0 0 / 60%);
+    @apply text-center
+  }
+  .Navbar {
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    position: fixed;
+    scroll-behavior: smooth;
+    z-index: 2;
+    @apply text-center
+  }
+  .Navbar ul li{
+    display: inline-block;
+  }
+  .Navbar ul li a{
+    display: block;
+    padding: 20px;
+    color: #fff;
+    font-size: 22px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    transition: all ease 0.5s;
+    @apply hover:bg-[#211b3450]
+  }
+  .icons {
+    position: absolute;
+    top: 90%;
+    left: 39%;
+    @apply text-4xl text-white
+  }
+  .icons ul li{
+    display: inline-block;
+  }
+  .icons ul li a{
+    display: block;
+    padding: 10px;
+    transition: all ease 0.5s;
+  }
+  #gh:hover {@apply text-gray-500}
+  #LIn:hover {@apply text-[#0A66C2]}
+  #dsc:hover {@apply text-[#5562EA]}
+  #ig:hover {@apply text-[#E8424E]}
+  #mail:hover {@apply text-[#32A350]}
+  /* ABOUT PAGE */
+  .panel-2 {
+    @apply h-screen w-full overflow-hidden flex flex-nowrap bg-white
+  }
+  .panel-2 .body-2 {
+  }
+  .panel-2 h1 {
+    font-size: 52px;
+    font-weight: 300;
+    padding: 4px;
+    padding-top: 80px;
+  }
+  .panel-2 h2 {
+    font-size: 40px;
+    font-weight: 300;
+  }
+  .panel-2 p {
+    padding: 4px;
+    font-size: 25px;
+    font-weight: 300;
+  }
+  /* EXPERIENCE PAGE */
+  .panel-3 {
+    @apply h-screen w-full overflow-hidden flex flex-nowrap text-center bg-gradient-to-b from-white to-red-300
+  }
+}

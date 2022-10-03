@@ -1,6 +1,6 @@
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faDiscord, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 function App() {
@@ -28,21 +28,28 @@ function App() {
             <li><a href="https://www.linkedin.com/in/ajay-jayanth/" rel="noopener noreferrer" target="_blank" id="LIn"><FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon></a></li>
             <li><a href="https://discordapp.com/users/694029330660982817" rel="noopener noreferrer" target="_blank" id="dsc"><FontAwesomeIcon icon={faDiscord}></FontAwesomeIcon></a></li>
             <li><a href="https://www.instagram.com/the_ordinary_ajay/" rel="noopener noreferrer" target="_blank" id="ig"><FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon></a></li>
-            <li><a href="mailto:kunhu2004@gmail.com" rel="noopener noreferrer" target="_blank" id="mail"><FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon></a></li>
+            <li><a href="mailto:ajay-jayanth04@gmail.com" rel="noopener noreferrer" target="_blank" id="mail"><FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon></a></li>
           </ul>
         </div>
       </div>
       <div className="panel-2" id="About">
         <div className="body-2">
-          <h1>About</h1>
-          <p>I'm currently a college freshman majoring in Computer Science and have engaged in numerous diverse extracurriculars and projects to build my technical and soft skills to pursue a career in the field.</p>
-          {/* <h2 id="s1">Education</h2>
-          <p id="p2">Pursuing B.S. in Computer Science at the University of Texas at Dallas</p>
-          <p id="p3">Graduated the Texas Academy of Mathematics of Science with Highest Academic Distinction</p> */}
+          <div className="mainbox">
+            <div className="leftbox">
+              <h1>About Me</h1>
+              <h2>Undergraduate Research Fellow and Computer Science Student</h2>
+              <h1>Ajay Jayanth</h1>
+            </div>
+            <div className="rightbox">
+              <p>I'm a Computer Science student set to graduate on May 2024 from the University of Texas at Dallas.</p>
+              <p>While pursuing numerous computer science endeavors, such as competitions, projects, and internships, I have acquired a toolbox of both technical and soft skills that I am continually refining and challenging.</p>
+              <p>Currently, I am a research fellow, but I am open to Computer Science internship opportunities for Summer 2023.</p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="panel-3" id="Experience">
-
+        <h1>Experience</h1>
       </div>
     </div>
   );

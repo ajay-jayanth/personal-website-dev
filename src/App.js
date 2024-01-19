@@ -1,76 +1,109 @@
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, faDiscord, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faDiscord, faInstagram, faDev } from '@fortawesome/free-brands-svg-icons';
+import syftPortrait from './img/syft-self-port.jpg';
+import syftLogo from './img/SYFT-favicon-dark.png';
+import broadcomLogo from './img/broadcom-logo.png';
+import materialabLogo from './img/materialab-logo.png';
+import utdLogo from './img/utd-logo.png';
+import aiCALogo from './img/aiCA-logo.png';
 
 function App() {
   return (
     <div className="App">
       <script src="https://kit.fontawesome.com/b5b196b557.js" crossorigin="anonymous"></script>
+      <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
       <div className="panel-1" id="Home">
         <div className="Navbar">
           <ul>
             <li><a href="#Home">HOME</a></li>
             <li><a href="#About">ABOUT</a></li>
             <li><a href="#Experience">EXPERIENCE</a></li>
-            <li><a href="#PROJECTS">PROJECTS</a></li>
-            <li><a href="#Activities">ACTIVITIES</a></li>
+            <li><a href="#Projects">PROJECTS</a></li>
             <li><a href="#Contact">CONTACT</a></li>
           </ul>
         </div>
         <div className="bg-1"></div>
-        <header className="App-header">
-          Hi, I'm Ajay Jayanth.
-        </header>
+          <header className="App-header">
+            Hi, I'm Ajay Jayanth.
+          </header>
         <div className="icons">
           <ul>
             <li><a href="https://github.com/ajay-jayanth" rel="noopener noreferrer" target="_blank" id="gh"><FontAwesomeIcon icon={faGithub}></FontAwesomeIcon></a></li>
             <li><a href="https://www.linkedin.com/in/ajay-jayanth/" rel="noopener noreferrer" target="_blank" id="LIn"><FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon></a></li>
             <li><a href="https://discordapp.com/users/694029330660982817" rel="noopener noreferrer" target="_blank" id="dsc"><FontAwesomeIcon icon={faDiscord}></FontAwesomeIcon></a></li>
-            <li><a href="https://www.instagram.com/the_ordinary_ajay/" rel="noopener noreferrer" target="_blank" id="ig"><FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon></a></li>
+            <li><a href="https://www.instagram.com/ajay.jayanth/" rel="noopener noreferrer" target="_blank" id="ig"><FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon></a></li>
+            <li><a href="https://www.devpost.com/ajay-jayanth/" rel="noopener noreferrer" target="_blank" id="devpost"><FontAwesomeIcon icon={faDev}></FontAwesomeIcon></a></li>
             <li><a href="mailto:ajay-jayanth04@gmail.com" rel="noopener noreferrer" target="_blank" id="mail"><FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon></a></li>
           </ul>
         </div>
       </div>
       <div className="panel-2" id="About">
-        <h3>About Me</h3> 
-        <div className="body-2">
-          <div className="mainbox">
-            <div className="leftbox">
-              <h1>CURRENT POSITION</h1>
-              <h2>Undergraduate Research Fellow and Computer Science Student</h2>
-              <h1>MateriaLAB @ UNT</h1>
-            </div>
-            <div className="rightbox">
-              <p>I'm a Computer Science student set to graduate on May 2024 from the University of Texas at Dallas.</p>
-              <p>While pursuing numerous computer science endeavors, such as competitions, projects, and internships, I have acquired a toolbox of both technical and soft skills that I am continually refining and challenging.</p>
-              <p>Currently, I am a research fellow, but I am open to Computer Science internship opportunities for Summer 2023.</p>
-            </div>
+        <div className='mainbox'>
+          <div className='leftBox'>
+            <h3 id='about-header'>About Me</h3>
+            <text>
+              I am a student with a deep passion for Full-Stack Development and
+              Artificial Intelligence. Currently pursuing my B.S. in Computer 
+              Science at the University of Texas at Dallas, I am driven by a 
+              relentless curiosity for cutting-edge technologies. As a Software 
+              Developer at SYFT, Inc., an emerging Fashion AI startup in Dallas, 
+              TX, I drive the evolution of the company's initial products and 
+              directly influence the trajectory of its software landscape.
+            </text>
+          </div>
+          <div className='imgBox'>
+            <img className='syft-portrait' src={syftPortrait} alt='syft'></img>
           </div>
         </div>
       </div>
       <div className="panel-3" id="Experience">
-        <h3>Experience</h3>
-        <div className="bodybox">
-          <ul>
-            <li>
-              <div className="listbox">
-                <div className="leftbox">
-                  <img class="w-full h-5/6 object-cover rounded-3xl" src="http://www.materialab.org/uploads/1/2/7/3/127334193/published/mos2-h2o-test2.png?1584646377" alt="MateriaLAB"></img>
-                </div>
-                <div className="rightbox">
-                  <h4>Undergraduate Research Fellow</h4>
-                  <div className="date">Aug 2020 – Present</div>
-                  <p>Developing a Python plugin called Environ, which has numerous functionalities and applications in the field of computational chemistry. Awarded $500 stipend to continue this research during Fall 2022.</p>
-                  <p>Optimized Deep Learning algorithms (Graphical Neural Networks and CNNs) to calculate solvation energies of multiple solute-solvent pairs.</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <h4 id="wip">Work in Progress...</h4>
-            </li>
-          </ul>
+        {/* <h3>Experience</h3> */}
+        <div className='experiences-list'>
+          <div className='exp-box' id='syft-exp-box'>
+            <div className='exp-img-container'>
+              <img className='exp-img' src={syftLogo} alt=''></img>
+            </div>
+            <div className='exp-textbox'>
+              <h3 className='exp-title' id='syft-title'>Software Engineer at SYFT, Inc.</h3>
+            </div>
+          </div>
+          <div className='exp-box' id='broadcom-exp-box'>
+            <div className='exp-img-container'>
+              <img className='exp-img' src={broadcomLogo} alt=''></img>
+            </div>
+            <div className='exp-textbox'>
+              <h3 className='exp-title' id='broadcom-title'>Machine Learning Intern at Broadcom</h3>
+            </div>
+          </div>
+          <div className='exp-box' id='utd-exp-box'>
+            <div className='exp-img-container'>
+              <img className='exp-img' src={utdLogo} alt=''></img>
+            </div>
+            <div className='exp-textbox'>
+              <h3 className='exp-title' id='utd-title'>Undergrad CS Student at UTDallas</h3>
+            </div>
+          </div>
+          <div className='exp-box' id='materialab-exp-box'>
+            <div className='exp-img-container'>
+              <img className='exp-img' src={materialabLogo} alt=''></img>
+            </div>
+            <div className='exp-textbox' id='materialab-textbox'>
+              <h3 className='exp-title' id='materialab-title'>Research Fellow at MateriaLAB</h3>
+            </div>
+          </div>
+          <div className='exp-box' id='aiCA-exp-box'>
+            <div className='exp-img-container'>
+              <img className='exp-img' src={aiCALogo} alt=''></img>
+            </div>
+            <div className='exp-textbox'>
+              <h3 className='exp-title' id='aiCA-title'>Coding Instructor at AI Code Academy</h3>
+            </div>
+          </div>
         </div>
+         {/* ADD DROP DESCRIPTION DROPDOWN ANIMATION OF EACH POSITION/EXPERIENCE*/}
+        {/* FINISH PROJECTS SECTION */}
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import './App.css';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faDiscord, faInstagram, faDev } from '@fortawesome/free-brands-svg-icons';
@@ -8,8 +9,25 @@ import broadcomLogo from './img/broadcom-logo.png';
 import materialabLogo from './img/materialab-logo.png';
 import utdLogo from './img/utd-logo.png';
 import aiCALogo from './img/aiCA-logo.png';
+import projectsData from './projectsData';
 
 function App() {
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+
+  const handleDotClick = (index) => {
+    setCurrentProjectIndex(index);
+  }
+
+  const renderDots = () => {
+    return projectsData.map((project, index) => (
+      <button
+        key={project.id}
+        className={`dot ${index === currentProjectIndex ? 'active' : ''}`}
+        onClick={() => handleDotClick(index)}
+      ></button>
+    ));
+  };
+
   return (
     <div className="App">
       <script src="https://kit.fontawesome.com/b5b196b557.js" crossorigin="anonymous"></script>
@@ -21,7 +39,6 @@ function App() {
             <li><a href="#About">ABOUT</a></li>
             <li><a href="#Experience">EXPERIENCE</a></li>
             <li><a href="#Projects">PROJECTS</a></li>
-            <li><a href="#Contact">CONTACT</a></li>
           </ul>
         </div>
         <div className="bg-1"></div>
@@ -42,7 +59,7 @@ function App() {
       <div className="panel-2" id="About">
         <div className='mainbox'>
           <div className='leftBox'>
-            <h3 id='about-header'>About Me</h3>
+            <h3 className='panel-header-1'>About Me</h3>
             <text>
               I am a student with a deep passion for Full-Stack Development and
               Artificial Intelligence. Currently pursuing my B.S. in Computer 
@@ -102,11 +119,33 @@ function App() {
             </div>
           </div>
         </div>
-         {/* ADD DROP DESCRIPTION DROPDOWN ANIMATION OF EACH POSITION/EXPERIENCE*/}
-        {/* FINISH PROJECTS SECTION */}
+      </div>
+      <div className='panel-4' id='Projects'>
+        <div className='projects-underlay'  style={{ transform: `translateX(${currentProjectIndex * -100}vw)` }}>
+          {projectsData.map((project) => (
+            <div className='project-background' style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/public-img/${project.bgImage})` }}>
+              <div className='backdrop-filter-cover'>
+                <div className='bodybox'>
+                    <div key={project.id} className='project-box'>
+                      <a href={project.projectUrl} rel="noopener noreferrer" target="_blank">
+                        <div className='project-img-container'>
+                          <img src={project.projectImage} alt='' className='project-img'></img>
+                        </div>
+                        <div className='project-details'>
+                          <h3 className='project-title'>{project.title}</h3>
+                          <div dangerouslySetInnerHTML={{ __html: project.description }} />
+                        </div>
+                      </a>
+                    </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className='dots-container'>{renderDots()}</div>
       </div>
     </div>
   );
-}
+};
 
 export default App;
